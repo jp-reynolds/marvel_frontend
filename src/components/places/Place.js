@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import './Character.css';
+import './Place.css';
 import axios from 'axios' 
 
 
 
-class Character extends Component {
+class Place extends Component {
 	constructor() {
 		super();
 
@@ -25,4 +25,4 @@ class Character extends Component {
   }
 }
 
-export default Character;
+export default Place;
