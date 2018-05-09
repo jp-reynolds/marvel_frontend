@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './Places.css';
 
 class Places extends Component {
 	constructor() {
@@ -22,14 +23,15 @@ class Places extends Component {
   render() {
 
   	let listOfPlaces = this.state.places.data.map((placeObject, index) => {
-  		return <li key = {index}>
-  				<h4>{placeObject.name}</h4>
+  		return <li className="placeObject" key = {index}>
+  				<img className="placeImage" src={placeObject.image}/>
+  				<h4 className="placeName">{placeObject.name}</h4>
   				</li>
   	})
 
     return (
       <div>
-			<h2>Places page!!!</h2>
+			<h2 className="placeTitle">Places page!!!</h2>
       		<ul> {listOfPlaces} </ul>
     	</div>
     );

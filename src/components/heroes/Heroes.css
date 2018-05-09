@@ -1,0 +1,32 @@
+.heroTitle {
+	text-align: center;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.heroImage {
+	border-radius: 50%;
+}
+
+.heroObject {
+	text-align: center;
+	display: block;
+	float: left;
+	padding: 20px;
+}
+
+.heroName {
+	font-weight: bold;
+}
+
+/*div {
+    display:block;
+    width:500px;
+    margin:30px;
+}
+img {
+    float:left;
+    padding:10px;
+}*/

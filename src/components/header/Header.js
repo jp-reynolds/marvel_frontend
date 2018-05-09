@@ -11,17 +11,17 @@ class Header extends Component {
         <Navbar>
   			<Navbar.Header>
     			<Navbar.Brand>
-      				<Link to={'/'}>Home </Link>
+      				<a href="/">A</a>
     			</Navbar.Brand>
   			</Navbar.Header>
 	  		<Nav>
-	    		<NavItem className="heroes" eventKey={1} href="/heroes">
+	    		<NavItem className="heroes" eventKey={1} href="/heroes" pullRight>
 	      			Heroes
 	    		</NavItem>
-	    		<NavItem className="villains" eventKey={2} href="/villains">
+	    		<NavItem className="villains" eventKey={2} href="/villains" pullRight>
 	     			Villains
 	    		</NavItem>
-	    		<NavItem className="locations" eventKey={3} href="/places">
+	    		<NavItem className="locations" eventKey={3} href="/places" pullRight>
 	      			Locations
 	    		</NavItem>
 	  		</Nav>
