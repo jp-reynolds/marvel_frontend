@@ -14,7 +14,7 @@ class Heroes extends Component {
 	};
 
 	componentDidMount() {
-		axios.get("/api/heroes").then((results) => {
+		axios.get("https://marvelcu.herokuapp.com/api/heroes").then((results) => {
 			this.setState({
 				heroes: results
 			})
