@@ -13,7 +13,7 @@ class Places extends Component {
 	}
 
 	componentDidMount() {
-		axios.get("/api/places").then((results) => {
+		axios.get("https://marvelcu.herokuapp.com/api/places").then((results) => {
 			this.setState({
 				places: results
 			})

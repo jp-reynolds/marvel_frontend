@@ -14,7 +14,7 @@ class Villains extends Component {
 	}
 
 	componentDidMount() {
-		axios.get("/api/villains").then((results) => {
+		axios.get("https://marvelcu.herokuapp.com/api/villains").then((results) => {
 			this.setState({
 				villains: results
 			})

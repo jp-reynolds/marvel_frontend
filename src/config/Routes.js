@@ -4,6 +4,7 @@ import Home from '../components/home/Home';
 import Heroes from '../components/heroes/Heroes';
 import Villains from '../components/villains/Villains';
 import Places from '../components/places/Places';
+import Characterhero from '../components/characters/Characterhero';
 
 export default (
   <Switch>
@@ -11,5 +12,9 @@ export default (
     <Route exact path='/heroes' component={ Heroes }/>
     <Route exact path='/villains' component={ Villains }/>
     <Route exact path='/places' component={ Places }/>
+    <Route exact path='/heroes/:supername' component={ Characterhero }/>
   </Switch>
 )
+
+
+// render={ ()=> <Characterhero hero={this.props.heroObject}/>}

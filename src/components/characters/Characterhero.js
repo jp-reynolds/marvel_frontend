@@ -4,25 +4,25 @@ import axios from 'axios'
 
 
 
-class Character extends Component {
+class Characterhero extends Component {
 	constructor() {
-		super();
+    super()
+    this.state = {
+      hero: {}
+    };
+  }
 
-	}
-
-	componentDidMount() {
-
-	}
 
 
   render() {
 
+
     return (
       <div>
-
+          This is the dynamic character page
       </div>
     );
   }
 }
 
-export default Character;
+export default Characterhero;
