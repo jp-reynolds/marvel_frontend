@@ -15,14 +15,14 @@ class Header extends Component {
     			</Navbar.Brand>
   			</Navbar.Header>
 	  		<Nav>
-	    		<NavItem className="heroes" eventKey={1}>
-	      			<Link to={'/heroes'}>Heroes </Link>
+	    		<NavItem className="heroes" eventKey={1} href='/heroes'>
+	      			Heroes
 	    		</NavItem>
-	    		<NavItem className="villains" eventKey={2}>
-	     			<Link to={'/villains'}>Villains </Link>
+	    		<NavItem className="villains" eventKey={2} href='/villains'>
+	     			Villains
 	    		</NavItem>
-	    		<NavItem className="locations" eventKey={3}>
-	      			<Link to={'/places'}>Places </Link>
+	    		<NavItem className="locations" eventKey={3} href='/places'>
+	      			Places
 	    		</NavItem>
 	  		</Nav>
 		</Navbar>

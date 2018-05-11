@@ -4,7 +4,7 @@ import Home from '../components/home/Home';
 import Heroes from '../components/heroes/Heroes';
 import Villains from '../components/villains/Villains';
 import Places from '../components/places/Places';
-import Characterhero from '../components/characters/Characterhero';
+import Character from '../components/character/Character';
 
 export default (
   <Switch>
@@ -12,7 +12,7 @@ export default (
     <Route exact path='/heroes' component={ Heroes }/>
     <Route exact path='/villains' component={ Villains }/>
     <Route exact path='/places' component={ Places }/>
-    <Route exact path='/heroes/:supername' component={ Characterhero }/>
+    <Route exact path='/heroes/:supername' component={ Character }/>
   </Switch>
 )
 

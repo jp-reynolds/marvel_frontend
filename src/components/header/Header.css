@@ -4,8 +4,11 @@
 
 .navbar-default .navbar-brand {
     color: white;
+    font-family: 'PT Sans Caption', sans-serif;
 }
 
 .navbar-default .navbar-nav > li > a {
     color: white;
+    font-family: 'PT Sans Caption', sans-serif;
+    font-size: 14px;
 }

@@ -1,3 +1,7 @@
+.background {
+	background-color: black;
+}
+
 .heroTitle {
 	text-align: center;
 }
@@ -6,9 +10,15 @@ ul {
 	list-style-type: none;
 }
 
+.heroContainer {
+	margin-left: 140px;
+	margin-right: 140px;
+	text-align: center;
+}
+
 .heroImage {
-	width: 200px;
-	height: 200px;
+	width: 130px;
+	height: 130px;
 	border-radius: 50%;
 }
 
@@ -21,14 +31,16 @@ ul {
 
 .heroName {
 	font-weight: bold;
+	font-family: 'Play', sans-serif;
 }
 
-/*div {
-    display:block;
-    width:500px;
-    margin:30px;
+/*.heroInfo {
+	display: none;
 }
-img {
-    float:left;
-    padding:10px;
+.heroInfo.on {
+	display: block;
 }*/
+
+
+/*font-family: 'Play', sans-serif;
+font-family: 'PT Sans Caption', sans-serif;*/

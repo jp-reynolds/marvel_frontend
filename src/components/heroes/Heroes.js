@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios'
+import $ from 'jquery'
 import './Heroes.css'
+import Character from '../character/Character';
+
 //import a new Hero componenant 
 
 class Heroes extends Component {
@@ -23,6 +26,12 @@ class Heroes extends Component {
 		})
 	}
 
+  toggleHeroInfo(event) {
+    $('.heroInfo').toggleClass("on");
+
+    // this.getElementsByClassName("heroInfo").classList.toggle("on");
+}
+
 
 
   render() {
@@ -32,13 +41,25 @@ class Heroes extends Component {
 
   	//let heroDetails = this.state.heroes.data. (custom hero name based on click)
 
+
   	let listOfHeroes = this.state.heroes.data.map((heroObject, index) => {
   		return <li className="heroObject" key = {index}>
-  					<Link to={`/heroes/${heroObject.supername}`} hero={heroObject}> 
-  						<img className="heroImage" width="200" src={heroObject.image}/>
-  					</Link>
-  					<h4 className="heroName">{heroObject.supername}</h4>
-  				</li>
+  					   <button onClick={this.toggleHeroInfo}> 
+  						  <img className="heroImage" width="200" src={heroObject.image}/>
+  					   </button>
+               <div className="heroInfo">
+                  <Character    
+                    image={heroObject.image}
+                    supername={heroObject.supername} 
+                    name={heroObject.name}
+                    abilities={heroObject.abilities}
+                    summary={heroObject.summary}
+                    allies={heroObject.allies}
+                    foes={heroObject.foes}
+                    quote={heroObject.quote}
+                  />
+               </div>
+  				   </li>
   	})
 
 
@@ -46,9 +67,12 @@ class Heroes extends Component {
   	//instead of passing in a list of heroes add a component and pass props into it, then in the component
   	//render just the name and 
     return (
-    	<div>
+    	<div className="heroBackground">
     		<h2 className="heroTitle">Super hero page!!!</h2>
-      		<ul> {listOfHeroes} </ul>
+          <div className="heroContainer">
+            <ul> {listOfHeroes} </ul>  
+          </div>
+      		
     	</div>
       
     );
@@ -56,4 +80,5 @@ class Heroes extends Component {
 }
 
 export default Heroes;
+
 
