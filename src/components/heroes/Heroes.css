@@ -1,6 +1,6 @@
-.background {
-	background-color: black;
-}
+/*.heroBackground {
+	background-color: grey;
+}*/
 
 .heroTitle {
 	text-align: center;
@@ -11,15 +11,15 @@ ul {
 }
 
 .heroContainer {
-	margin-left: 140px;
-	margin-right: 140px;
+	margin-left: 5em;
+	margin-right: 5em;
 	text-align: center;
 }
 
 .heroImage {
-	width: 130px;
-	height: 130px;
-	border-radius: 50%;
+	width: 160px;
+	height: 160px;
+	border-radius: 100%;
 }
 
 .heroObject {
@@ -32,6 +32,25 @@ ul {
 .heroName {
 	font-weight: bold;
 	font-family: 'Play', sans-serif;
+}
+
+.newHeroTitle {
+	clear: both;
+	text-align: center;
+	margin-left: 5em;
+	margin-right: 20em;
+}
+
+.newHero {
+	clear: both;
+	margin-left: 5em;
+	margin-right: 12em;
+	width: 50%;
+	text-align: center;
+}
+
+hr {
+	clear: both;
 }
 
 /*.heroInfo {

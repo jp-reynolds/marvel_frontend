@@ -29,21 +29,22 @@ class Character extends Component {
 
     	<div>
         
-        <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
-          {this.props.supername}
+        <Button bsSize="large" onClick={this.handleShow}>
+          <h4>{this.props.supername}</h4>
         </Button>
 
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
+            <Modal.Title>{this.props.supername}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <h2>{this.props.name}</h2>
-            <h3>{this.props.abilities}</h3>
-            <p>{this.props.summary}</p>
-            <h4>{this.props.allies}</h4>
-            <h4>{this.props.foes}</h4>
-            <h5>{this.props.quote}</h5>
+          	<img src={this.props.image}/>
+            <h4><b>Name:</b> {this.props.name}</h4>
+            <h4><b>Abilities:</b> {this.props.abilities}</h4>
+            <h4><b>Summary:</b> {this.props.summary}</h4>
+            <h4><b>Allies:</b> {this.props.allies}</h4>
+            <h4><b>Foes:</b> {this.props.foes}</h4>
+            <h4><b>Quote:</b> {this.props.quote}</h4>
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={this.handleClose}>Close</Button>
