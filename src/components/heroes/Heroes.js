@@ -37,7 +37,8 @@ class Heroes extends Component {
 	}
 
 	componentDidMount() {
-		axios.get("https://marvelcu.herokuapp.com/api/heroes").then((results) => {
+    //https://marvelcu.herokuapp.com/api/heroes
+		axios.get("/api/heroes").then((results) => {
 			this.setState({
 				heroes: results
 			})
@@ -76,8 +77,8 @@ class Heroes extends Component {
       image: this.state.newImage,
       organization: "avengers"
     }
-
-    axios.post("https://marvelcu.herokuapp.com/api/characters", newHero).then(this.axiosCallback)
+    //https://marvelcu.herokuapp.com/api/characters
+    axios.post("/api/characters", newHero).then(this.axiosCallback)
   }
 
   onSuperheroChange(event){
@@ -199,7 +200,6 @@ class Heroes extends Component {
 
   	let listOfHeroes = this.state.heroes.data.map((heroObject, index) => {
   		return <li className="heroObject" key = {index}>
-  						 <img alt={heroObject.supername} className="heroImage" width="200" src={heroObject.image}/>
                <div className="heroInfo">
                   <Character    
                     image={heroObject.image}
@@ -217,13 +217,14 @@ class Heroes extends Component {
 
     return (
     	<div className="heroBackground">
-    		<h2 className="heroTitle">Super hero page!!!</h2>
+    		<img className="heroTitle" src="http://www.dorkadia.com/wp-content/uploads/2013/05/Marvel-Heroes-Title.png"/>
           <div className="heroContainer">
             <ul> {listOfHeroes} </ul>  
           </div>
           <hr/>
           <div className="newHeroTitle">
-            <h2>Add a new Hero</h2>
+            <h2>Add a new Hero:</h2>
+            <hr/>
           </div>
           <div className="newHero">
             <Form horizontal onSubmit={this.onFormSubmit}>
@@ -299,6 +300,7 @@ class Heroes extends Component {
               </FormGroup>
             </Form>;
           </div>
+          <hr/>
     	</div>
     );
   }

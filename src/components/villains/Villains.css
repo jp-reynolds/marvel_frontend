@@ -1,18 +1,27 @@
+/*.villainBackground {
+	background-color: grey;
+}*/
+
 ul {
 	list-style-type: none;
 }
 
 .villainTitle {
+	width: 30em;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.villainContainer {
+	margin-left: 5em;
+	margin-right: 5em;
 	text-align: center;
 }
 
-ul {
-	list-style-type: none;
-}
-
 .villainImage {
-	width: 200px;
-	height: 200px;
+	width: 10em;
+	height: 10em;
 	border-radius: 50%;
 }
 
@@ -20,9 +29,29 @@ ul {
 	text-align: center;
 	display: block;
 	float: left;
-	padding: 20px;
+	padding: 1.25em;
 }
 
 .villainName {
 	font-weight: bold;
+	font-family: 'Play', sans-serif;
+}
+
+.newVillainTitle {
+	clear: both;
+	color: white;
+	margin-left: 8em;
+	margin-right: 8em;
+}
+
+.newVillain {
+	clear: both;
+	margin-left: 8em;
+	margin-right: 8em;
+	width: 50%;
+	text-align: center;
+}
+
+hr {
+	clear: both;
 }

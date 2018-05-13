@@ -24,14 +24,17 @@ class Character extends Component {
     this.setState({ show: true });
   }
 
+  // <Button bsSize="large" onClick={this.handleShow}>
+  //         <h4>{this.props.supername}</h4>
+  //       </Button>
+
   render() {
     return (
 
     	<div>
         
-        <Button bsSize="large" onClick={this.handleShow}>
-          <h4>{this.props.supername}</h4>
-        </Button>
+        <img className="characterImage" onClick={this.handleShow} src={this.props.image}/>
+        <h4 className="characterName">{this.props.supername}</h4>
 
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>

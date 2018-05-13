@@ -1,9 +1,12 @@
-/*.heroBackground {
-	background-color: grey;
-}*/
+.heroBackground {
+	background-color: black;
+}
 
 .heroTitle {
-	text-align: center;
+	width: 30em;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 ul {
@@ -17,8 +20,8 @@ ul {
 }
 
 .heroImage {
-	width: 160px;
-	height: 160px;
+	width: 10em;
+	height: 10em;
 	border-radius: 100%;
 }
 
@@ -26,7 +29,7 @@ ul {
 	text-align: center;
 	display: block;
 	float: left;
-	padding: 20px;
+	padding: 1.25em;
 }
 
 .heroName {
@@ -36,21 +39,25 @@ ul {
 
 .newHeroTitle {
 	clear: both;
-	text-align: center;
-	margin-left: 5em;
-	margin-right: 20em;
+	color: white;
+	margin-left: 8em;
+	margin-right: 8em;
 }
 
 .newHero {
 	clear: both;
-	margin-left: 5em;
-	margin-right: 12em;
+	margin-left: 8em;
+	margin-right: 8em;
 	width: 50%;
 	text-align: center;
 }
 
 hr {
 	clear: both;
+}
+
+label {
+	color: white;
 }
 
 /*.heroInfo {
