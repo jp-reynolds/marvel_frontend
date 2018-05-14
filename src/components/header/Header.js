@@ -14,7 +14,7 @@ class Header extends Component {
       				<Link to={'/'}>Home</Link>
     			</Navbar.Brand>
   			</Navbar.Header>
-	  		<Nav>
+	  		<Nav pullRight>
 	    		<NavItem className="heroes" eventKey={1} href='/heroes'>
 	      			Heroes
 	    		</NavItem>
@@ -22,7 +22,7 @@ class Header extends Component {
 	     			Villains
 	    		</NavItem>
 	    		<NavItem className="locations" eventKey={3} href='/places'>
-	      			Places
+	      			Locations
 	    		</NavItem>
 	  		</Nav>
 		</Navbar>

@@ -15,7 +15,8 @@ class Places extends Component {
 	}
 
 	componentDidMount() {
-		axios.get("https://marvelcu.herokuapp.com/api/places").then((results) => {
+		//https://marvelcu.herokuapp.com/api/places
+		axios.get("/api/places").then((results) => {
 			this.setState({
 				places: results
 			})
@@ -38,7 +39,7 @@ class Places extends Component {
 
     return (
       <div className="placesBackground">
-			<img className="placeTitle" src="http://www.atomcreativemedia.com/wp-content/uploads/2017/02/marvel-studios-logo-design.jpg"/>
+			<img className="placeTitle" src="https://i.imgur.com/pr7PIDs.jpg"/>
       		<div className="placeContainer">
       			<ul> {listOfPlaces} </ul>
     		</div>
@@ -48,7 +49,7 @@ class Places extends Component {
     		<div className="newHeroTitle">
             	<h2>Add a new Place:</h2>
           	</div>
-          	
+
     		<div className="newHero">
           	<hr/>
             <Form horizontal onSubmit={this.onFormSubmit}>
