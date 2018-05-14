@@ -28,5 +28,25 @@ ul {
 	text-align: center;
 }
 
+.newPlaceTitle {
+	clear: both;
+	color: white;
+	margin-left: 8em;
+	margin-right: 8em;
+}
 
+.newPlace {
+	clear: both;
+	margin-left: 8em;
+	margin-right: 8em;
+	width: 50%;
+	text-align: center;
+}
 
+hr {
+	clear: both;
+}
+
+label {
+	color: white;
+}

@@ -38,7 +38,7 @@ class Heroes extends Component {
 
 	componentDidMount() {
     //https://marvelcu.herokuapp.com/api/heroes
-		axios.get("https://marvelcu.herokuapp.com/api/heroes").then((results) => {
+		axios.get("/api/heroes").then((results) => {
 			this.setState({
 				heroes: results
 			})
@@ -78,7 +78,7 @@ class Heroes extends Component {
       organization: "avengers"
     }
     //https://marvelcu.herokuapp.com/api/characters
-    axios.post("https://marvelcu.herokuapp.com/api/characters", newHero).then(this.axiosCallback)
+    axios.post("/api/characters", newHero).then(this.axiosCallback)
   }
 
   onSuperheroChange(event){

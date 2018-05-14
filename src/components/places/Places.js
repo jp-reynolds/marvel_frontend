@@ -10,8 +10,21 @@ class Places extends Component {
 		this.state = {
 			places: {
 				data: []
-			}
-		}
+			},
+      newName: "",
+      newWhere: "",
+      newSummary: "",
+      newEvents: "",
+      newImage: "",
+		};
+
+    this.onFormSubmit = this.onFormSubmit.bind(this)
+    this.onNameChange = this.onNameChange.bind(this)
+    this.onWhereChange = this.onWhereChange.bind(this)
+    this.onSummaryChange = this.onSummaryChange.bind(this)
+    this.onEventsChange = this.onEventsChange.bind(this)
+    this.onImageChange = this.onImageChange.bind(this)
+    this.axiosCallback = this.axiosCallback.bind(this)
 	}
 
 	componentDidMount() {
@@ -19,10 +32,96 @@ class Places extends Component {
 		axios.get("/api/places").then((results) => {
 			this.setState({
 				places: results
-			})
-		})
+			});
+		});
 	}
+//---------------------------------------------------
+  
+  axiosCallback(results) {
+    let newData = this.state.places.data
+    newData.push(results.data)
+    this.setState({
+      newName: "",
+      newWhere: "",
+      newSummary: "",
+      newEvents: "",
+      newImage: "",
+      places: {
+        data: newData
+      }
+    })
 
+  }
+
+  onFormSubmit(event) {
+    event.preventDefault()
+    let newPlace = {
+      name : this.state.newName,
+      where : this.state.newWhere,
+      summary: this.state.newSummary,
+      events: this.state.newEvents,
+      image: this.state.newImage
+    }
+    //https://marvelcu.herokuapp.com/api/places
+    axios.post("/api/places", newPlace).then(this.axiosCallback)
+
+  }
+
+
+  onNameChange(event){
+    this.setState({
+      newName : event.target.value,
+      newWhere: this.state.newWhere,
+      newSummary: this.state.newSummary,
+      newEvents: this.state.newEvents,
+      newImage: this.state.newImage
+    });
+  }
+
+  onWhereChange(event){
+    this.setState({
+      newName : this.state.newName,
+      newWhere: event.target.value,
+      newSummary: this.state.newSummary,
+      newEvents: this.state.newEvents,
+      newImage: this.state.newImage
+    });
+  }
+
+  onSummaryChange(event){
+    this.setState({
+      newName : this.state.newName,
+      newWhere: this.state.newWhere,
+      newSummary: event.target.value,
+      newEvents: this.state.newEvents,
+      newImage: this.state.newImage
+    });
+  }
+
+  onEventsChange(event){
+    this.setState({
+      newName : this.state.newName,
+      newWhere: this.state.newWhere,
+      newSummary: this.state.newSummary,
+      newEvents: event.target.value,
+      newImage: this.state.newImage
+    });
+  }
+
+  onImageChange(event){
+    this.setState({
+      newName : this.state.newName,
+      newWhere: this.state.newWhere,
+      newSummary: this.state.newSummary,
+      newEvents: this.state.newEvents,
+      newImage: event.target.value
+    });
+  }
+
+
+
+
+//------------------------------------------------------------------------
   render() {
 
   	let listOfPlaces = this.state.places.data.map((placeObject, index) => {
@@ -40,17 +139,17 @@ class Places extends Component {
     return (
       <div className="placesBackground">
 			<img className="placeTitle" src="https://i.imgur.com/pr7PIDs.jpg"/>
-      		<div className="placeContainer">
-      			<ul> {listOfPlaces} </ul>
+      	<div className="placeContainer">
+      		<ul> {listOfPlaces} </ul>
     		</div>
 
     		<hr/>
 
     		<div className="newHeroTitle">
             	<h2>Add a new Place:</h2>
-          	</div>
+        </div>
 
-    		<div className="newHero">
+    		<div className="newPlace">
           	<hr/>
             <Form horizontal onSubmit={this.onFormSubmit}>
 
@@ -68,7 +167,7 @@ class Places extends Component {
                   Where: 
                 </Col>
                 <Col sm={10}>
-                  <FormControl type="text" placeholder="Abilities" onChange={this.onAbilitiesChange} value={this.state.newAbilities}/>
+                  <FormControl type="text" placeholder="Where" onChange={this.onWhereChange} value={this.state.newWhere}/>
                 </Col>
               </FormGroup>
 
@@ -77,7 +176,7 @@ class Places extends Component {
                   Summary 
                 </Col>
                 <Col sm={10}>
-                  <FormControl type="text" placeholder="Abilities" onChange={this.onAbilitiesChange} value={this.state.newAbilities}/>
+                  <FormControl type="text" placeholder="Summary" onChange={this.onSummaryChange} value={this.state.newSummary}/>
                 </Col>
               </FormGroup>
 
@@ -86,7 +185,7 @@ class Places extends Component {
                   Events: 
                 </Col>
                 <Col sm={10}>
-                  <FormControl type="text" placeholder="Summary" onChange={this.onSummaryChange} value={this.state.newSummary}/>
+                  <FormControl type="text" placeholder="Events" onChange={this.onEventsChange} value={this.state.newEvents}/>
                 </Col>
               </FormGroup>
 
