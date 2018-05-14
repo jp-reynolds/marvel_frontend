@@ -10,3 +10,17 @@
     font-family: 'Play', sans-serif;
     color: white;
 }
+
+
+.modalImagee {
+	width: 15em;
+	border-radius: 1em;
+}
+
+.visible-true {
+	display:block;
+}
+
+.visible-false {
+	display:none;
+}

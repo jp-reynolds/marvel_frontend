@@ -7,12 +7,20 @@ class Character extends Component {
 	constructor(props, context) {
     	super(props, context);
 
-    	this.handleShow = this.handleShow.bind(this);
-    	this.handleClose = this.handleClose.bind(this);
-
 	    this.state = {
-	      show: false
+	      show: false,
+        editName: "",
+        editAbilities: "",
+        editSummary: "",
+        editAllies: "",
+        editFoes: "",
+        editQuote: "",
+        currentlyEditing : false
 	    };
+
+      this.handleShow = this.handleShow.bind(this);
+      this.handleClose = this.handleClose.bind(this);
+      this.handleEdit = this.handleEdit.bind(this);
 	}
 
 
@@ -24,9 +32,40 @@ class Character extends Component {
     this.setState({ show: true });
   }
 
-  // <Button bsSize="large" onClick={this.handleShow}>
-  //         <h4>{this.props.supername}</h4>
-  //       </Button>
+  onNameChange(event) {
+    this.setState ({
+      editName: event.target.value
+    })
+    
+
+  }
+
+  handleEdit() {
+    this.setState({currentlyEditing:true,
+      show: true,
+      editName: this.state.name,
+      editAbilities: this.state.abilities,
+      editSummary: this.state.summary,
+      editAllies: this.state.allies,
+      editFoes: this.state.foes,
+      editQuote: this.state.quote,
+})
+  }
+
+
+  componentDidMount(event){
+      this.setState({
+        currentlyEditing : false,
+        show: false,
+        editName: this.props.name,
+        editAbilities: this.props.abilities,
+        editSummary: this.props.summary,
+        editAllies: this.props.allies,
+        editFoes: this.props.foes,
+        editQuote: this.props.quote,
+      });
+
+  }
 
   render() {
     return (
@@ -41,16 +80,28 @@ class Character extends Component {
             <Modal.Title>{this.props.supername}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-          	<img src={this.props.image}/>
-            <h4><b>Name:</b> {this.props.name}</h4>
-            <h4><b>Abilities:</b> {this.props.abilities}</h4>
-            <h4><b>Summary:</b> {this.props.summary}</h4>
-            <h4><b>Allies:</b> {this.props.allies}</h4>
-            <h4><b>Foes:</b> {this.props.foes}</h4>
-            <h4><b>Quote:</b> {this.props.quote}</h4>
+          	<img className="modalImagee" src={this.props.image}/>
+            <div className={"visible-" + this.state.currentlyEditing}>
+              <h4><b>Name:</b></h4><input className="modalContent" value={this.props.name} onChange={this.onNameChange}/>
+              <h4><b>Abilities:</b></h4><input className="modalContent" value={this.props.abilities} onChange={this.onAbilitiesChange}/>
+              <h4><b>Summary:</b></h4><input className="modalContent" value={this.props.summary} onChange={this.onSummaryChange}/>
+              <h4><b>Allies:</b></h4><input className="modalContent" value={this.props.allies} onChange={this.onAlliesChange}/>
+              <h4><b>Foes:</b></h4><input className="modalContent" value={this.props.foes} onChange={this.onFoesChange}/>
+              <h4><b>Quote:</b></h4><input className="modalContent" value={this.props.quote} onChange={this.onQuoteChange}/>
+            </div>
+            <div className={"visible-" + !this.state.currentlyEditing}>
+              <h4><b>Name:</b> {this.props.name}</h4>
+              <h4><b>Abilities:</b> {this.props.abilities}</h4>
+              <h4><b>Summary:</b> {this.props.summary}</h4>
+              <h4><b>Allies:</b> {this.props.allies}</h4>
+              <h4><b>Foes:</b> {this.props.foes}</h4>
+              <h4><b>Quote:</b> {this.props.quote}</h4>
+            </div>
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={this.handleClose}>Close</Button>
+            <Button onClick={this.handleEdit}>Edit</Button>
+            <Button onClick={this.handleSave}>Save</Button>
           </Modal.Footer>
         </Modal>
       </div>
