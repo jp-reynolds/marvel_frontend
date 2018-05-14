@@ -3,27 +3,29 @@ ul {
 }
 
 .placeTitle {
-	text-align: center;
+	width: 30em;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 ul {
 	list-style-type: none;
 }
 
-.placeImage {
-	width: 500px;
-	height: 215px;
-}
-
 .placeObject {
 	text-align: center;
 	display: block;
 	float: left;
-	padding: 20px;
+	padding: 1.25em;
 }
 
-.placeName {
-	font-weight: bold;
+.placeContainer {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
 }
+
 
 

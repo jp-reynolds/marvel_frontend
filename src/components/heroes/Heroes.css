@@ -19,12 +19,6 @@ ul {
 	text-align: center;
 }
 
-.heroImage {
-	width: 10em;
-	height: 10em;
-	border-radius: 100%;
-}
-
 .heroObject {
 	text-align: center;
 	display: block;

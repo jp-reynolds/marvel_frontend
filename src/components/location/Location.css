@@ -1,0 +1,16 @@
+.locationImage {
+    width: 25em;
+    height: 13.438em;
+    border-radius: 1.5em;
+}
+
+.locationName {
+    font-weight: bold;
+    font-family: 'Play', sans-serif;
+    color: white;
+}
+
+.modalImage {
+	width: 30em;
+	border-radius: 1.5em;
+}

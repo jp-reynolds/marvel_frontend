@@ -38,7 +38,7 @@ class Heroes extends Component {
 
 	componentDidMount() {
     //https://marvelcu.herokuapp.com/api/heroes
-		axios.get("/api/heroes").then((results) => {
+		axios.get("https://marvelcu.herokuapp.com/api/heroes").then((results) => {
 			this.setState({
 				heroes: results
 			})
@@ -78,7 +78,7 @@ class Heroes extends Component {
       organization: "avengers"
     }
     //https://marvelcu.herokuapp.com/api/characters
-    axios.post("/api/characters", newHero).then(this.axiosCallback)
+    axios.post("https://marvelcu.herokuapp.com/api/characters", newHero).then(this.axiosCallback)
   }
 
   onSuperheroChange(event){
@@ -200,7 +200,6 @@ class Heroes extends Component {
 
   	let listOfHeroes = this.state.heroes.data.map((heroObject, index) => {
   		return <li className="heroObject" key = {index}>
-               <div className="heroInfo">
                   <Character    
                     image={heroObject.image}
                     supername={heroObject.supername} 
@@ -211,7 +210,6 @@ class Heroes extends Component {
                     foes={heroObject.foes}
                     quote={heroObject.quote}
                   />
-               </div>
   				   </li>
   	})
 
@@ -221,12 +219,15 @@ class Heroes extends Component {
           <div className="heroContainer">
             <ul> {listOfHeroes} </ul>  
           </div>
+
           <hr/>
+
           <div className="newHeroTitle">
             <h2>Add a new Hero:</h2>
-            <hr/>
           </div>
+
           <div className="newHero">
+          <hr/>
             <Form horizontal onSubmit={this.onFormSubmit}>
               <FormGroup controlId="formHorizontalEmail">
                 <Col componentClass={ControlLabel} sm={2}>

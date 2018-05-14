@@ -35,7 +35,7 @@ class Villains extends Component {
 
 	componentDidMount() {
 		//https://marvelcu.herokuapp.com/api/villains
-		axios.get("/api/villains").then((results) => {
+		axios.get("https://marvelcu.herokuapp.com/api/villains").then((results) => {
 			this.setState({
 				villains: results
 			})
@@ -75,7 +75,7 @@ class Villains extends Component {
 	      organization: "villain"
 	    }
 	    //https://marvelcu.herokuapp.com/api/characters
-	    axios.post("/api/characters", newVillain).then(this.axiosCallback)
+	    axios.post("https://marvelcu.herokuapp.com/api/characters", newVillain).then(this.axiosCallback)
 	  }
 
 	onVillainChange(event){
@@ -217,9 +217,9 @@ class Villains extends Component {
 			<hr/>
           <div className="newVillainTitle">
             <h2>Add a new Villain:</h2>
-            <hr/>
           </div>
           <div className="newVillain">
+          <hr/>
             <Form horizontal onSubmit={this.onFormSubmit}>
               <FormGroup controlId="formHorizontalEmail">
                 <Col componentClass={ControlLabel} sm={2}>
