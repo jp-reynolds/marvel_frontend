@@ -33,7 +33,7 @@
     width: 32em;
     height: 16.438em;
     border-radius: 1.5em;
-
+	opacity: 0.5;
 }
 
 #heroes  {
