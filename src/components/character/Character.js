@@ -18,6 +18,7 @@ class Character extends Component {
         editAllies: "",
         editFoes: "",
         editQuote: "",
+        editImage: "",
         currentlyEditing : false
 	    };
 
@@ -187,6 +188,7 @@ class Character extends Component {
                 <h4><b>Foes:</b></h4><input className="modalContent" value={this.state.editFoes} onChange={this.onFoesChange}/>
                 <h4><b>Quote:</b></h4><input className="modalContent" value={this.state.editQuote} onChange={this.onQuoteChange}/>
                 <h4><b>Image URL:</b></h4><input className="modalContent" value={this.state.editImage} onChange={this.onImageChange}/>
+                <hr/>
                 <Button type="submit" >Save</Button>
               </form>
 

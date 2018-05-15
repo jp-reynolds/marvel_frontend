@@ -132,6 +132,7 @@ class Places extends Component {
   				where={placeObject.where}
   				summary={placeObject.summary}
   				events={placeObject.events}
+          _id={placeObject._id}
   				/>
   				</li>
   	})

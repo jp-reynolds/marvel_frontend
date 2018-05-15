@@ -14,3 +14,15 @@
 	width: 30em;
 	border-radius: 1.5em;
 }
+
+.visible-true {
+	display:block;
+}
+
+.visible-false {
+	display:none;
+}
+
+input {
+	width: 30em;
+}
