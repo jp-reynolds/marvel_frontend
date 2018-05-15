@@ -32,6 +32,10 @@ ul {
 	padding: 1.25em;
 }
 
+.villainObject:hover {
+	transform: scale(1.1);
+}
+
 .villainName {
 	font-weight: bold;
 	font-family: 'Play', sans-serif;

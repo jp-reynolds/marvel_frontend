@@ -9,7 +9,7 @@
 
 .homeButtonContainer {
 	display: block;
-	width: 60em;
+	width: 75em;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
@@ -30,8 +30,8 @@
 }
 
 .homeImage {
-    width: 25em;
-    height: 13.438em;
+    width: 32em;
+    height: 16.438em;
     border-radius: 1.5em;
 
 }
@@ -49,22 +49,37 @@
 }
 
 #heroes:hover {
-	opacity: 0.6;
+	opacity: 0.25;
 }
 
 #villains:hover {
-	opacity: 0.6;
+	opacity: 0.25;
 }
 
 #locations:hover {
-	opacity: 0.6;
+	opacity: 0.25;
 }
 
 #theories:hover {
-	opacity: 0.6;
+	opacity: 0.25;
 }
 
 .movies {
 	padding-top: 2em;
 	width: 100%;
+}
+
+.buttonContainer {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    padding-bottom: 1.5em;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Play', sans-serif;
 }

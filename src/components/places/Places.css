@@ -21,6 +21,10 @@ ul {
 	padding: 1.25em;
 }
 
+.placeObject:hover {
+    transform: scale(1.1);
+}
+
 .placeContainer {
 	display: block;
 	margin-left: auto;
