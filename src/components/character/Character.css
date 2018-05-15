@@ -24,3 +24,7 @@
 .visible-false {
 	display:none;
 }
+
+input {
+	width: 30em;
+}

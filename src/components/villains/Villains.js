@@ -35,7 +35,7 @@ class Villains extends Component {
 
 	componentDidMount() {
 		//https://marvelcu.herokuapp.com/api/villains
-		axios.get("api/villains").then((results) => {
+		axios.get("https://marvelcu.herokuapp.com/api/villains").then((results) => {
 			this.setState({
 				villains: results
 			})
@@ -75,7 +75,7 @@ class Villains extends Component {
 	      organization: "villain"
 	    }
 	    //https://marvelcu.herokuapp.com/api/characters
-	    axios.post("/api/characters", newVillain).then(this.axiosCallback)
+	    axios.post("https://marvelcu.herokuapp.com/api/characters", newVillain).then(this.axiosCallback)
 	  }
 
 	onVillainChange(event){
@@ -198,12 +198,14 @@ class Villains extends Component {
   				<Character
   					image={villainObject.image}
                     supername={villainObject.supername} 
+                    origin={villainObject.origin}
                     name={villainObject.name}
                     abilities={villainObject.abilities}
                     summary={villainObject.summary}
                     allies={villainObject.allies}
                     foes={villainObject.foes}
                     quote={villainObject.quote}
+                    _id={villainObject._id}
   				/>
   				</li>
   	})

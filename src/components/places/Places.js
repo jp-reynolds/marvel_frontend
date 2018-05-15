@@ -29,7 +29,7 @@ class Places extends Component {
 
 	componentDidMount() {
 		//https://marvelcu.herokuapp.com/api/places
-		axios.get("/api/places").then((results) => {
+		axios.get("https://marvelcu.herokuapp.com/api/places").then((results) => {
 			this.setState({
 				places: results
 			});
@@ -63,7 +63,7 @@ class Places extends Component {
       image: this.state.newImage
     }
     //https://marvelcu.herokuapp.com/api/places
-    axios.post("/api/places", newPlace).then(this.axiosCallback)
+    axios.post("https://marvelcu.herokuapp.com/api/places", newPlace).then(this.axiosCallback)
 
   }
 
