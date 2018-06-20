@@ -49,19 +49,19 @@
 }
 
 #heroes:hover {
-	opacity: 0.25;
+	opacity: 0.24;
 }
 
 #villains:hover {
-	opacity: 0.25;
+	opacity: 0.24;
 }
 
 #locations:hover {
-	opacity: 0.25;
+	opacity: 0.24;
 }
 
 #theories:hover {
-	opacity: 0.25;
+	opacity: 0.24;
 }
 
 .movies {
